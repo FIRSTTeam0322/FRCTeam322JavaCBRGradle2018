@@ -89,7 +89,7 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void disabledInit(){
-    	steadyLEDSetter();
+    	//steadyLEDSetter();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class Robot extends TimedRobot {
         autonomousCommand = chooser.getSelected();
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
-        blinkingLEDSetter(200);
+        //blinkingLEDSetter(200);
     }
 
     /**
@@ -120,7 +120,7 @@ public class Robot extends TimedRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
-        blinkingLEDSetter(100);
+        //blinkingLEDSetter(100);
     }
 
     /**
