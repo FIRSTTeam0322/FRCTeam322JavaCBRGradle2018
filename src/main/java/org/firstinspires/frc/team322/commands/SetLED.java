@@ -9,9 +9,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class BlinkingLED extends Command {
+public class SetLED extends Command {
 
-    public BlinkingLED() {
+    public SetLED() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.ledControl);
@@ -24,9 +24,8 @@ public class BlinkingLED extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	try {
-			Robot.ledControl.setBlinkingRGB(RobotMap.redInt, RobotMap.greenInt, RobotMap.blueInt, RobotMap.ledBlinkRate);
+			Robot.ledControl.automaticLEDSetter();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }
@@ -38,6 +37,11 @@ public class BlinkingLED extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	try {
+			Robot.ledControl.setRGB(100.0, 100.0, 100.0, 0);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
     }
 
     // Called when another command which requires one or more of the same

@@ -114,7 +114,9 @@ public class ChassisSensors extends Subsystem {
 	}
 	
 	public void dashboardUpdater() {
-		SmartDashboard.putNumber("Gyro Angle", IMU.getAngle());
+		SmartDashboard.putNumber("Gyro Angle X", IMU.getAngleX());
+		SmartDashboard.putNumber("Gyro Angle Y", IMU.getAngleY());
+		SmartDashboard.putNumber("Gyro Angle Z", IMU.getAngleZ());
 		SmartDashboard.putNumber("X-Axis Acceleration", IMU.getAccelX());
 		SmartDashboard.putNumber("Y-Axis Acceleration", IMU.getAccelY());
 		SmartDashboard.putNumber("Z-Axis Acceleration", IMU.getAccelZ());
