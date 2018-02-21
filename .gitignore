@@ -23,13 +23,7 @@ run/
 gradle/.launch/
 
 # OS Files
-.DS_Store
 .DS_Store?
-._*
-.Spotlight-V100
-.AppleDouble
-.LSOverride
-.Trashes
 ehthumbs.db
 Thumbs.db
 
@@ -38,9 +32,6 @@ Thumbs.db
 
 # directory for XML generated after running junit tests through ant
 junit/
-
-.gradle
-/build/
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -67,10 +58,6 @@ gradle-app.setting
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
 
 # Folder config file
 Desktop.ini
