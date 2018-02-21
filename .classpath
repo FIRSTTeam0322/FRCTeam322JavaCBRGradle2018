@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry path="bin/default" kind="output"/>
 	<classpathentry output="bin/main" kind="src" path="src/main/java">
 		<attributes>
 			<attribute name="gradle_scope" value="main"/>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry path="bin/default" kind="output"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
 	<classpathentry sourcepath="C:/Users/CCRLH85/.gradle/caches/modules-2/files-2.1/com.github.juchong/ADIS16448-RoboRIO-Driver/master-SNAPSHOT/7a1109ca6a3878240548ff7ab153cb09a36a21de/ADIS16448-RoboRIO-Driver-master-SNAPSHOT-sources.jar" kind="lib" path="C:/Users/CCRLH85/.gradle/caches/modules-2/files-2.1/com.github.juchong/ADIS16448-RoboRIO-Driver/master-SNAPSHOT/473b8df861bbad4f3200ebe3c7e698b91ebf5393/ADIS16448-RoboRIO-Driver-master-SNAPSHOT.jar">
 		<attributes>
