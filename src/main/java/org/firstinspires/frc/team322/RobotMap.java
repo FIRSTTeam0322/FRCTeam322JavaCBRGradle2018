@@ -54,6 +54,14 @@ public class RobotMap {
     public static DoubleSolenoid climbArmdoubleSolenoid1;
     public static ADIS16448_IMU chassisSensorsIMU;
     
+	private static final double WHEEL_DIAMETER = 6.0;
+	private static final double CYCLES_PER_REVOLUTION = 360.0;
+	private static final double ENCODER_GEAR_RATIO = 1.0;
+	private static final double GEAR_RATIO = 1.0;
+	private static final double FUDGE_FACTOR = 1.0;
+	public static final double ENCODER_PULSE_DISTANCE = 
+			Math.PI * WHEEL_DIAMETER / CYCLES_PER_REVOLUTION / ENCODER_GEAR_RATIO / GEAR_RATIO * FUDGE_FACTOR;
+    
     public static double redInt, greenInt, blueInt;
     public static long ledBlinkRate;
     

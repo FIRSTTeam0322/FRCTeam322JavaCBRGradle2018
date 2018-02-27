@@ -71,6 +71,10 @@ public class Chassis extends Subsystem {
     public void driveWithJoystick(XboxController driveStick) {
     	robotDrive.arcadeDrive(-(driveStick.getY(Hand.kLeft)), driveStick.getX(Hand.kRight), true);
     }
+    
+    public void autonDriveSystem(double xSpeed, double zRotation) {
+    	robotDrive.arcadeDrive(xSpeed, zRotation);
+    }
 
     public void brakesOn() {
     	leftFrontDriveMotor.setNeutralMode(NeutralMode.Brake);
@@ -86,23 +90,23 @@ public class Chassis extends Subsystem {
         rightRearDriveMotor.setNeutralMode(NeutralMode.Coast);
     }
     
-    public int getEncoderData(int encoder) {
+    public double getEncoderData(int encoder) {
     	switch(encoder)
     	{
     		case 1:
-    			return leftFrontDriveMotor.getSensorCollection().getQuadraturePosition();
+    			return leftFrontDriveMotor.getSensorCollection().getQuadraturePosition() * RobotMap.ENCODER_PULSE_DISTANCE;
     		
     		case 2:
-    			return leftRearDriveMotor.getSensorCollection().getQuadraturePosition();
+    			return leftRearDriveMotor.getSensorCollection().getQuadraturePosition() * RobotMap.ENCODER_PULSE_DISTANCE;
     		
     		case 3:
-    			return rightFrontDriveMotor.getSensorCollection().getQuadraturePosition();
+    			return rightFrontDriveMotor.getSensorCollection().getQuadraturePosition() * RobotMap.ENCODER_PULSE_DISTANCE;
     		
     		case 4:
-    			return rightRearDriveMotor.getSensorCollection().getQuadraturePosition();
+    			return rightRearDriveMotor.getSensorCollection().getQuadraturePosition() * RobotMap.ENCODER_PULSE_DISTANCE;
     		
     		default:
-    			return 0;
+    			return 0.0;
     	}
     }
     
