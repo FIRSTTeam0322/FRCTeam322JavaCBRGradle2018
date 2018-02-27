@@ -87,7 +87,6 @@ public class OI {
         pullCrateButton.whileHeld(new PullCrate());
 
         // SmartDashboard Buttons
-        SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("DriveWithJoystick", new DriveWithJoystick());
         SmartDashboard.putData("Brakes", new Brakes());
         SmartDashboard.putData("LowerArmControl", new LowerArmControl());
