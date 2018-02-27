@@ -23,6 +23,14 @@ deploy {
     }
 }
 
+// Set the versions of libraries to use. This is calculated for you based
+// off known-stable versions for the current year, but you can modify
+// them here if you so desire. This block is not required.
+wpi {
+    wpilibVersion = '2018.3.3'
+    ctreVersion = '5.2.2.0'
+}
+
 // Defining repository for ADIS16448-RoboRIO-Driver (and any other future maven based repositories).
 repositories {
   mavenCentral()
