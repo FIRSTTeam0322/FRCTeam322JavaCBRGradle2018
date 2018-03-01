@@ -28,7 +28,7 @@ deploy {
 // them here if you so desire. This block is not required.
 wpi {
     wpilibVersion = '2018.3.3'
-    ctreVersion = '5.2.2.0'
+    ctreVersion = '5.3.1.0'
 }
 
 // Defining repository for ADIS16448-RoboRIO-Driver (and any other future maven based repositories).
