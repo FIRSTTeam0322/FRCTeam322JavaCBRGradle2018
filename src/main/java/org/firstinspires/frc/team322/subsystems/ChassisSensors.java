@@ -53,7 +53,7 @@ public class ChassisSensors extends Subsystem {
     @Override
     public void periodic() {
         // Put code here to be run every loop
-
+    	this.dashboardUpdater();
     }
 
     // Put methods for controlling this subsystem
