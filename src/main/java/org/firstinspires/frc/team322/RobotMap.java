@@ -72,12 +72,14 @@ public class RobotMap {
         
         chassisleftSideDriveMotors = new SpeedControllerGroup(chassisleftFrontDriveMotor, chassisleftRearDriveMotor  );
         chassisleftSideDriveMotors.setName("Chassis", "leftSifeDriveMotors");
+        chassisleftSideDriveMotors.setInverted(true);
         
         chassisrightFrontDriveMotor = new WPI_TalonSRX(3);
         chassisrightRearDriveMotor = new WPI_TalonSRX(4);
                 
         chassisrightSideDriveMotors = new SpeedControllerGroup(chassisrightFrontDriveMotor, chassisrightRearDriveMotor  );
         chassisrightSideDriveMotors.setName("Chassis", "rightSideDriveMotors");
+        chassisrightSideDriveMotors.setInverted(false);
         
         chassisrobotDrive = new DifferentialDrive(chassisleftSideDriveMotors, chassisrightSideDriveMotors);
         chassisrobotDrive.setName("Chassis", "robotDrive");
