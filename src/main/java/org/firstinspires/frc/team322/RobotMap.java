@@ -79,12 +79,12 @@ public class RobotMap {
                 
         chassisrightSideDriveMotors = new SpeedControllerGroup(chassisrightFrontDriveMotor, chassisrightRearDriveMotor  );
         chassisrightSideDriveMotors.setName("Chassis", "rightSideDriveMotors");
-        chassisrightSideDriveMotors.setInverted(false);
+        chassisrightSideDriveMotors.setInverted(true);
         
         chassisrobotDrive = new DifferentialDrive(chassisleftSideDriveMotors, chassisrightSideDriveMotors);
         chassisrobotDrive.setName("Chassis", "robotDrive");
         chassisrobotDrive.setSafetyEnabled(true);
-        chassisrobotDrive.setExpiration(0.1);
+        chassisrobotDrive.setExpiration(1.0);
         chassisrobotDrive.setMaxOutput(1.0);
 
         
