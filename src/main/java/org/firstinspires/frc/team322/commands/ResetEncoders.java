@@ -2,14 +2,13 @@ package org.firstinspires.frc.team322.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import org.firstinspires.frc.team322.Robot;
-import org.firstinspires.frc.team322.RobotMap;
 
 /**
  *
  */
-public class DriveForward extends Command {
+public class ResetEncoders extends Command {
 
-    public DriveForward() {
+    public ResetEncoders() {
     	requires(Robot.chassis);
     }
 
@@ -21,24 +20,20 @@ public class DriveForward extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	Robot.chassis.autonDriveSystem(RobotMap.autonSpeed, RobotMap.autonRotation);
+    	Robot.chassis.resetEncoders();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        if((timeSinceInitialized() > RobotMap.autonTime) || (Math.abs(Robot.chassis.getEncoderData(1)) > RobotMap.autonDistance ||
-        		Math.abs(Robot.chassis.getEncoderData(2)) > RobotMap.autonDistance ||
-        		Math.abs(Robot.chassis.getEncoderData(3)) > RobotMap.autonDistance ||
-        		Math.abs(Robot.chassis.getEncoderData(4)) > RobotMap.autonDistance)) return true;
-        else return false;
+        if(Robot.chassis.getEncoderData(1) == 0 && Robot.chassis.getEncoderData(2) == 0 &&
+        		Robot.chassis.getEncoderData(3) == 0 && Robot.chassis.getEncoderData(4) == 0) return true;
+        	else return false;
     }
 
     // Called once after isFinished returns true
     @Override
     protected void end() {
-    	Robot.chassis.autonDriveSystem(0.0, 0.0);
-    	Robot.chassis.brakesOff();
     }
 
     // Called when another command which requires one or more of the same

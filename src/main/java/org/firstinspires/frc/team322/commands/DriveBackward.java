@@ -2,6 +2,7 @@ package org.firstinspires.frc.team322.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import org.firstinspires.frc.team322.Robot;
+import org.firstinspires.frc.team322.RobotMap;
 
 /**
  *
@@ -20,21 +21,17 @@ public class DriveBackward extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	if(Robot.chassis.getEncoderData(1) < -36.0 || Robot.chassis.getEncoderData(2) < -36.0 || 
-    			Robot.chassis.getEncoderData(3) < -36.0 || Robot.chassis.getEncoderData(4) < -36.0) {
-    		Robot.chassis.brakesOff();
-    		Robot.chassis.autonDriveSystem(-0.75, 0.0);
-    	}
-    	else {
-    		Robot.chassis.autonDriveSystem(0.0, 0.0);
-    		Robot.chassis.brakesOn();
-    	}
+    	Robot.chassis.autonDriveSystem(-(RobotMap.autonSpeed), RobotMap.autonRotation);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        return false;
+        if((timeSinceInitialized() > RobotMap.autonTime) || (Math.abs(Robot.chassis.getEncoderData(1)) > RobotMap.autonDistance ||
+        		Math.abs(Robot.chassis.getEncoderData(2)) > RobotMap.autonDistance ||
+        		Math.abs(Robot.chassis.getEncoderData(3)) > RobotMap.autonDistance ||
+        		Math.abs(Robot.chassis.getEncoderData(4)) > RobotMap.autonDistance)) return true;
+        else return false;
     }
 
     // Called once after isFinished returns true
