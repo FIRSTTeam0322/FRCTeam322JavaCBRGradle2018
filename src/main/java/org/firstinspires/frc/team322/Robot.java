@@ -148,13 +148,11 @@ public class Robot extends TimedRobot {
     	Scheduler.getInstance().run();
     }
     
-	
 	public void getRoboPrefs() {
-    	//Setup Robot Preferences
-		RobotMap.autonDistance = robotPrefs.getDouble("Autonomous Distance", 36.0);
-		RobotMap.autonSpeed = robotPrefs.getDouble("Autonomous Speed", 0.50);
-		RobotMap.autonRotation = robotPrefs.getDouble("Autonomous Rotation", 0.0);
-    	RobotMap.autonTime = robotPrefs.getDouble("Autonomous Time", 7.5);
+		RobotMap.autonDistance = robotPrefs.getDouble("Autonomous Distance", RobotMap.autonDistance);
+		RobotMap.autonSpeed = robotPrefs.getDouble("Autonomous Speed", RobotMap.autonSpeed);
+		RobotMap.autonRotation = robotPrefs.getDouble("Autonomous Rotation", RobotMap.autonRotation);
+    	RobotMap.autonTime = robotPrefs.getDouble("Autonomous Time", RobotMap.autonTime);
     	SmartDashboard.putNumber("Autonomous Speed", RobotMap.autonSpeed);
     	SmartDashboard.putNumber("Autonomous Rotation", RobotMap.autonRotation);
     	SmartDashboard.putNumber("Autonomous Distance", RobotMap.autonDistance);

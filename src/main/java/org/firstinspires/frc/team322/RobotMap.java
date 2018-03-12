@@ -123,6 +123,11 @@ public class RobotMap {
         chassisSensorsIMU.setName("ChassisSensors", "IMU");
         chassisSensorsIMU.calibrate();
         
+        RobotMap.autonDistance = 36.0;
+        RobotMap.autonSpeed = 0.5;
+        RobotMap.autonRotation = 0.0;
+        RobotMap.autonTime = 7.5;
+        
         redInt = 100.0;
         greenInt = 100.0;
         blueInt = 100.0;
