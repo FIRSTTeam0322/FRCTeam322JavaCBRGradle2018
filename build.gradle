@@ -2,7 +2,7 @@ plugins {
     id "java"
     id "eclipse"
     id "idea"
-    id "jaci.openrio.gradle.GradleRIO" version "2018.02.17"
+    id "jaci.openrio.gradle.GradleRIO" version "2018.03.06"
 }
 
 def TEAM = 322
@@ -27,7 +27,6 @@ deploy {
 // off known-stable versions for the current year, but you can modify
 // them here if you so desire. This block is not required.
 wpi {
-    wpilibVersion = '2018.3.3'
     ctreVersion = '5.3.1.0'
 }
 
@@ -43,8 +42,8 @@ dependencies {
     compile wpilib()
     compile ctre()
 	compile navx()
-    compile 'com.github.juchong:ADIS16448-RoboRIO-Driver:master-SNAPSHOT'
     compile openrio.powerup.matchData()
+	compile 'com.github.juchong:ADIS16448-RoboRIO-Driver:master-SNAPSHOT'
 }
 
 // Setting up my Jar File. In this case, adding all libraries into the main jar ('fat jar')
@@ -56,5 +55,5 @@ jar {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '4.4'
+    gradleVersion = '4.6'
 }
