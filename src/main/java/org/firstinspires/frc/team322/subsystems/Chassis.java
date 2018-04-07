@@ -102,16 +102,16 @@ public class Chassis extends Subsystem {
     	switch(encoder)
     	{
     		case 1:
-    			return leftFrontDriveMotor.getSensorCollection().getQuadraturePosition() / RobotMap.ENCODER_PULSE_DISTANCE;
+    			return (RobotMap.ENCODER_PULSE_DISTANCE / leftFrontDriveMotor.getSensorCollection().getQuadraturePosition());
     		
     		case 2:
-    			return leftRearDriveMotor.getSensorCollection().getQuadraturePosition() / RobotMap.ENCODER_PULSE_DISTANCE;
+    			return (RobotMap.ENCODER_PULSE_DISTANCE / leftRearDriveMotor.getSensorCollection().getQuadraturePosition());
     		
     		case 3:
-    			return rightFrontDriveMotor.getSensorCollection().getQuadraturePosition() / RobotMap.ENCODER_PULSE_DISTANCE;
+    			return (RobotMap.ENCODER_PULSE_DISTANCE / rightFrontDriveMotor.getSensorCollection().getQuadraturePosition());
     		
     		case 4:
-    			return rightRearDriveMotor.getSensorCollection().getQuadraturePosition() / RobotMap.ENCODER_PULSE_DISTANCE;
+    			return (RobotMap.ENCODER_PULSE_DISTANCE / rightRearDriveMotor.getSensorCollection().getQuadraturePosition());
     		
     		default:
     			return 0.0;
