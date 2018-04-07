@@ -124,7 +124,7 @@ public class RobotMap {
         chassisSensorsIMU.calibrate();
         
         RobotMap.autonDistance = 36.0;
-        RobotMap.autonSpeed = 0.5;
+        RobotMap.autonSpeed = 1.0;
         RobotMap.autonRotation = 0.0;
         RobotMap.autonTime = 7.5;
         

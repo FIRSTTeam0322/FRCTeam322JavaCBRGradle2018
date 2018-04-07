@@ -35,7 +35,7 @@ import org.firstinspires.frc.team322.subsystems.*;
 public class Robot extends TimedRobot {
 
     Command autonomousCommand;
-    SendableChooser<Command> chooser = new SendableChooser<>();
+    SendableChooser<String> chooser = new SendableChooser<>();
     Preferences robotPrefs;
 
     public static OI oi;
@@ -78,7 +78,6 @@ public class Robot extends TimedRobot {
         oi = new OI();
         
         DS = DriverStation.getInstance();
-        gameData = DS.getGameSpecificMessage();
         
     	//Setup Camera
     	frontCameraServer = CameraServer.getInstance().startAutomaticCapture();
@@ -91,9 +90,9 @@ public class Robot extends TimedRobot {
     	robotPrefs = Preferences.getInstance();
         
         // Add commands to Autonomous Sendable Chooser
-        chooser.addDefault("Do Nothing", new DoNothing());
-        chooser.addObject("Drive Forward", new DriveForward());
-        chooser.addObject("Drive Backward", new DriveBackward());
+        chooser.addDefault("Do Nothing", "Do Nothing");
+        chooser.addObject("Drive Forward", "Drive Forward");
+        chooser.addObject("Drive Backward", "Drive Backward");
         SmartDashboard.putData("Auto mode", chooser);
     }
 
@@ -114,9 +113,22 @@ public class Robot extends TimedRobot {
 
     @Override
     public void autonomousInit() {
+        gameData = DS.getGameSpecificMessage();
     	getRoboPrefs();
-    	autonomousCommand = chooser.getSelected();
-        // schedule the autonomous command (example)
+    	switch (chooser.getSelected()) {
+    		case "Do Nothing":	autonomousCommand = new DoNothing();
+    		break;
+    		
+    		case "Drive Forward":	autonomousCommand = new DriveForward();
+    		break;
+    		
+    		case "Drive Backward": autonomousCommand = new DriveBackward();
+    		break;
+    		
+    		default: autonomousCommand = new DoNothing();
+    		break;
+    	}
+    	// schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
     }
 
