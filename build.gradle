@@ -43,6 +43,7 @@ dependencies {
     compile ctre()
 	compile navx()
     compile openrio.powerup.matchData()
+	compile pathfinder()
 	compile 'com.github.juchong:ADIS16448-RoboRIO-Driver:master-SNAPSHOT'
 }
 
