@@ -52,7 +52,6 @@ public class Robot extends TimedRobot {
     public static MidArm midArm;
     
     public static DriverStation DS;
-    private static String gameData;
     public static UsbCamera frontCameraServer, rearCameraServer;
     /**
      * This function is run when the robot is first started up and should be
@@ -93,6 +92,7 @@ public class Robot extends TimedRobot {
         chooser.addDefault("Do Nothing", "Do Nothing");
         chooser.addObject("Drive Forward", "Drive Forward");
         chooser.addObject("Drive Backward", "Drive Backward");
+        chooser.addObject("Score on Near Switch", "Score on Near Switch");
         SmartDashboard.putData("Auto mode", chooser);
     }
 
@@ -113,19 +113,22 @@ public class Robot extends TimedRobot {
 
     @Override
     public void autonomousInit() {
-        gameData = DS.getGameSpecificMessage();
+        RobotMap.gameData = DS.getGameSpecificMessage();
     	getRoboPrefs();
     	switch (chooser.getSelected()) {
-    		case "Do Nothing":	autonomousCommand = new DoNothing();
+    		case "Do Nothing":				autonomousCommand = new DoNothing();
     		break;
     		
-    		case "Drive Forward":	autonomousCommand = new DriveForward();
+    		case "Drive Forward":			autonomousCommand = new DriveForward();
     		break;
     		
-    		case "Drive Backward": autonomousCommand = new DriveBackward();
+    		case "Drive Backward":			autonomousCommand = new DriveBackward();
     		break;
     		
-    		default: autonomousCommand = new DoNothing();
+    		case "Score on Near Switch":	autonomousCommand = new ScoreOnNearSwitch();
+    		break;
+    		
+    		default: 						autonomousCommand = new DoNothing();
     		break;
     	}
     	// schedule the autonomous command (example)

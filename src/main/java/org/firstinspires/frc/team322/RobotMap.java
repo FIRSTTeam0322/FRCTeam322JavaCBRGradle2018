@@ -61,6 +61,8 @@ public class RobotMap {
 	public static final double ENCODER_PULSE_DISTANCE = 
 			Math.PI * WHEEL_DIAMETER / ENCODER_GEAR_RATIO / GEAR_RATIO * FUDGE_FACTOR;
     
+	public static String gameData;
+	
     public static double redInt, greenInt, blueInt;
     public static long ledBlinkRate;
     
@@ -123,10 +125,12 @@ public class RobotMap {
         chassisSensorsIMU.setName("ChassisSensors", "IMU");
         chassisSensorsIMU.calibrate();
         
+        gameData = "";
+        
         RobotMap.autonDistance = 36.0;
-        RobotMap.autonSpeed = 1.0;
+        RobotMap.autonSpeed = 0.5;
         RobotMap.autonRotation = 0.0;
-        RobotMap.autonTime = 7.5;
+        RobotMap.autonTime = 5.0;
         
         redInt = 100.0;
         greenInt = 100.0;
