@@ -27,15 +27,13 @@ public class DriveBackward extends Command {
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        if((timeSinceInitialized() > RobotMap.autonTime) || (Math.abs(Robot.chassis.getEncoderData(1)) > RobotMap.autonDistance ||
+        if((timeSinceInitialized() > RobotMap.autonTime) /*|| (Math.abs(Robot.chassis.getEncoderData(1)) > RobotMap.autonDistance ||
         		Math.abs(Robot.chassis.getEncoderData(2)) > RobotMap.autonDistance ||
         		Math.abs(Robot.chassis.getEncoderData(3)) > RobotMap.autonDistance ||
-        		Math.abs(Robot.chassis.getEncoderData(4)) > RobotMap.autonDistance)) {
-        	System.out.println("True " + timeSinceInitialized());
+        		Math.abs(Robot.chassis.getEncoderData(4)) > RobotMap.autonDistance)*/) {
         	return true;
         }
         else {
-        	System.out.println("False " + timeSinceInitialized());
         	return false;
         }
     }

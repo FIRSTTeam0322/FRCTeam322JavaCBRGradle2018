@@ -32,10 +32,18 @@ public class DriveForward extends Command {
         		Math.abs(Robot.chassis.getEncoderData(3)) > RobotMap.autonDistance ||
         		Math.abs(Robot.chassis.getEncoderData(4)) > RobotMap.autonDistance)) {
         	System.out.println("True " + timeSinceInitialized());
+        	System.out.println("Encoder 1 " + Robot.chassis.getEncoderData(1));
+        	System.out.println("Encoder 2 " + Robot.chassis.getEncoderData(2));
+        	System.out.println("Encoder 3 " + Robot.chassis.getEncoderData(3));
+        	System.out.println("Encoder 4 " + Robot.chassis.getEncoderData(4));
         	return true;
         }
         else {
         	System.out.println("False " + timeSinceInitialized());
+        	System.out.println("Encoder 1 " + Robot.chassis.getEncoderData(1));
+        	System.out.println("Encoder 2 " + Robot.chassis.getEncoderData(2));
+        	System.out.println("Encoder 3 " + Robot.chassis.getEncoderData(3));
+        	System.out.println("Encoder 4 " + Robot.chassis.getEncoderData(4));
         	return false;
         }
     }
