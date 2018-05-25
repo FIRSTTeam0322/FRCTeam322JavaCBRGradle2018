@@ -77,6 +77,10 @@ public class Chassis extends Subsystem {
     	robotDrive.arcadeDrive(-(xSpeed), zRotation);
     }
 
+    public void pathfinderDriveSystem(double leftSpeed, double rightSpeed) {
+    	robotDrive.tankDrive(leftSpeed, rightSpeed);
+    }
+
     public void brakesOn() {
     	leftFrontDriveMotor.setNeutralMode(NeutralMode.Brake);
         leftRearDriveMotor.setNeutralMode(NeutralMode.Brake);
@@ -115,6 +119,26 @@ public class Chassis extends Subsystem {
     		
     		default:
     			return 0.0;
+    	}
+    }
+
+    public int getRawEncoderData(int encoder) {
+    	switch(encoder)
+    	{
+    		case 1:
+    			return leftFrontDriveMotor.getSensorCollection().getQuadraturePosition();
+    		
+    		case 2:
+    			return leftRearDriveMotor.getSensorCollection().getQuadraturePosition();
+    		
+    		case 3:
+    			return rightFrontDriveMotor.getSensorCollection().getQuadraturePosition();
+    		
+    		case 4:
+    			return rightRearDriveMotor.getSensorCollection().getQuadraturePosition();
+    		
+    		default:
+    			return 0;
     	}
     }
     
