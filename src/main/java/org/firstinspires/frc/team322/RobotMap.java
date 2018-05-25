@@ -53,13 +53,16 @@ public class RobotMap {
     public static ADIS16448_IMU chassisSensorsIMU;
     
     public static double autonDistance, autonRotation, autonSpeed, autonTime;
-	private static final double WHEEL_DIAMETER = 6.0;
+    private static final double WHEEL_DIAMETER = 6.0;
+    public static final double WHEEL_DIAMETER_METRIC = 0.152;   //In Meters for FRC Pathfinder
 	//private static final double CYCLES_PER_REVOLUTION = 1440.0;
 	private static final double ENCODER_GEAR_RATIO = 1.0;
 	private static final double GEAR_RATIO = 1.0;
-	private static final double FUDGE_FACTOR = 1.0;
+    private static final double FUDGE_FACTOR = 1.0;
 	public static final double ENCODER_PULSE_DISTANCE = 
-			Math.PI * WHEEL_DIAMETER / ENCODER_GEAR_RATIO / GEAR_RATIO * FUDGE_FACTOR;
+            Math.PI * WHEEL_DIAMETER / ENCODER_GEAR_RATIO / GEAR_RATIO * FUDGE_FACTOR;
+    public static final double AXLE_TRACK = 0.5;                //In Meters for FRC Pathfinder  ***EDIT***
+    public static final double MAX_VELOCITY = 2.0;              //In Meters per Second  ***EDIT***
     
 	public static String gameData;
 	
