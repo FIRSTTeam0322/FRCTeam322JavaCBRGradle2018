@@ -27,7 +27,6 @@ deploy {
 // off known-stable versions for the current year, but you can modify
 // them here if you so desire. This block is not required.
 wpi {
-    ctreVersion = '5.3.1.0'
 }
 
 // Defining repository for ADIS16448-RoboRIO-Driver (and any other future maven based repositories).
