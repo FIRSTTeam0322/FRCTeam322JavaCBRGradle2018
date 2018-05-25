@@ -123,8 +123,14 @@ public class Robot extends TimedRobot {
     		break;
     		
     		case "Drive Backward":			autonomousCommand = new DriveBackward();
+            break;
+            
+            case "Cross Line Outside":		autonomousCommand = new AutonCrossLineOutside();
+            break;
+            
+            case "Cross Line Center":		autonomousCommand = new AutonCrossLineCenter();
     		break;
-    		
+            
     		case "Score on Near Switch":	autonomousCommand = new ScoreOnNearSwitch();
     		break;
     		
