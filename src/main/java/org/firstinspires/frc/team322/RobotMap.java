@@ -61,8 +61,8 @@ public class RobotMap {
     private static final double FUDGE_FACTOR = 1.0;
 	public static final double ENCODER_PULSE_DISTANCE = 
             Math.PI * WHEEL_DIAMETER / ENCODER_GEAR_RATIO / GEAR_RATIO * FUDGE_FACTOR;
-    public static final double AXLE_TRACK = 0.5;                //In Meters for FRC Pathfinder  ***EDIT***
-    public static final double MAX_VELOCITY = 2.0;              //In Meters per Second  ***EDIT***
+    public static final double AXLE_TRACK = 0.559;                //In Meters for FRC Pathfinder
+    public static final double MAX_VELOCITY = 3.8;              //In Meters per Second  ***EDIT (Maybe?)***
     
 	public static String gameData;
 	
