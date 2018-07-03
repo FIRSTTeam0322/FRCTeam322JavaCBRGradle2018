@@ -119,10 +119,6 @@ public class OI {
         return driveStick;
     }
 
-    /*public XboxController getManipulatorStick() {
-        return manipulatorStick;
-    }*/
-    
     public F310Controller getManipulatorStick() {
         return manipulatorStick;
     }
