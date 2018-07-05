@@ -75,7 +75,7 @@ public class RobotMap {
         chassisleftRearDriveMotor = new WPI_TalonSRX(2);
         
         chassisleftSideDriveMotors = new SpeedControllerGroup(chassisleftFrontDriveMotor, chassisleftRearDriveMotor  );
-        chassisleftSideDriveMotors.setName("Chassis", "leftSifeDriveMotors");
+        chassisleftSideDriveMotors.setName("Chassis", "leftSideDriveMotors");
         chassisleftSideDriveMotors.setInverted(true);
         
         chassisrightFrontDriveMotor = new WPI_TalonSRX(3);
