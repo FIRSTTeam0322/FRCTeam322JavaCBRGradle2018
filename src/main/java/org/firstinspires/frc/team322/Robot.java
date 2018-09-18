@@ -92,6 +92,8 @@ public class Robot extends TimedRobot {
         chooser.addDefault("Do Nothing", "Do Nothing");
         chooser.addObject("Drive Forward", "Drive Forward");
         chooser.addObject("Drive Backward", "Drive Backward");
+        chooser.addObject("Cross Line Outside", "Cross Line Outside");        
+        chooser.addObject("Cross Line Center", "Cross Line Center");
         chooser.addObject("Score on Near Switch", "Score on Near Switch");
         SmartDashboard.putData("Auto mode", chooser);
     }
@@ -181,7 +183,8 @@ public class Robot extends TimedRobot {
 	}
     
 	public void debugPrint() {
-		System.out.println("Gyro Angle X" + chassisSensors.getAngleX());
+        
+        System.out.println("Gyro Angle X" + chassisSensors.getAngleX());
 		System.out.println("Gyro Angle Y" + chassisSensors.getAngleY());
 		System.out.println("Gyro Angle Z" + chassisSensors.getAngleZ());
     	System.out.println();
@@ -194,6 +197,7 @@ public class Robot extends TimedRobot {
     	System.out.println("Right Front Distance " + chassis.getEncoderData(3));
     	System.out.println("Right Rear Distance " + chassis.getEncoderData(4));
     	System.out.println();
-    	System.out.println();
+        System.out.println();
+        
 	}
 }
