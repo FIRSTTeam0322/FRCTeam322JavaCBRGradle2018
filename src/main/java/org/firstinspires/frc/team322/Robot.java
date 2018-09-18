@@ -183,7 +183,7 @@ public class Robot extends TimedRobot {
 	}
     
 	public void debugPrint() {
-        
+        /*
         System.out.println("Gyro Angle X" + chassisSensors.getAngleX());
 		System.out.println("Gyro Angle Y" + chassisSensors.getAngleY());
 		System.out.println("Gyro Angle Z" + chassisSensors.getAngleZ());
@@ -198,6 +198,6 @@ public class Robot extends TimedRobot {
     	System.out.println("Right Rear Distance " + chassis.getEncoderData(4));
     	System.out.println();
         System.out.println();
-        
+       */ 
 	}
 }
