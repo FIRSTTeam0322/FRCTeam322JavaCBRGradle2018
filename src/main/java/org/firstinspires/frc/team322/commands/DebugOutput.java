@@ -9,8 +9,6 @@ import org.firstinspires.frc.team322.Robot;
 public class DebugOutput extends Command {
 
     public DebugOutput() {
-        requires(Robot.chassisSensors);
-    	requires(Robot.chassis);
     }
 
     // Called just before this Command runs the first time
